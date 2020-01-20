@@ -8,35 +8,50 @@ class Services extends Component {
                 <h3>SERVICES</h3>
                 <h2>What We Offer</h2>
                 <div className="row">
-                    <div>
-                        <span>
-                            <ion-icon name="phone-portrait"></ion-icon>
-                        </span>
-                        <h4>Responsive</h4>
-                        <p>Looks great on any screen size!</p>
-                    </div>
-                    <div>
-                        <span>
-                            <ion-icon name="brush"></ion-icon>
-                        </span>
-                        <h4>Redesigned</h4>
-                        <p>Freshly redesigned for Bootstrap 4.</p>
-                    </div>
-                    <div>
-                        <span>
-                            <ion-icon name="thumbs-up"></ion-icon>
-                        </span>
-                        <h4>Favorited</h4>
-                        <p>Millions of users <ion-icon name="heart"></ion-icon> Start Bootstrap!</p>
-                    </div>
-                    <div>
-                        <span>
-                            <ion-icon name="help"></ion-icon>
-                        </span>
-                        <h4>Question</h4>
-                        <p>I mustache you a question...</p>
-                    </div>
+                    <Icons icon={iconObj[0].icon} title={iconObj[0].title} description={iconObj[0].description}/>
+
+                    <Icons icon={iconObj[1].icon} title={iconObj[1].title} description={iconObj[1].description}/>
+
+                    <Icons icon={iconObj[2].icon} title={iconObj[2].title} description={iconObj[2].description}/>
+
+                    <Icons icon={iconObj[3].icon} title={iconObj[3].title} description={iconObj[3].description}/>
                 </div>
+            </div>
+        );
+    }
+}
+
+const iconObj = [
+    {
+        icon: <ion-icon name="phone-portrait"></ion-icon>,
+        title: 'Responsive',
+        description: 'Looks great on any screen size!'
+    },
+    {
+        icon: <ion-icon name="brush"></ion-icon>,
+        title: 'Redesigned',
+        description: 'Freshly redesigned for Bootstrap 4.'
+    },
+    {
+        icon: <ion-icon name="thumbs-up"></ion-icon>,
+        title: 'Favorited',
+        description: 'Millions of users Love Start Bootstrap!'
+    },
+    {
+        icon: <ion-icon name="help"></ion-icon>,
+        title: 'Question',
+        description: 'I mustache you a question...'
+    }
+]
+class Icons extends Component {
+    render() {
+        return (
+            <div>
+                <span>
+                    {this.props.icon}
+                </span>
+                <h4>{this.props.title}</h4>
+                <p>{this.props.description}</p>
             </div>
         );
     }
